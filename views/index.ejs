@@ -1,0 +1,32 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Table</title>
+</head>
+<body>
+    <h1>User Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.name %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <form action="/signup" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>
